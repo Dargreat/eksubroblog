@@ -4,7 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Load all posts
 async function loadPosts() {
-  const response = await fetch('/api/posts');
+  // Replace the local endpoint with the Vercel URL
+  const response = await fetch('https://eksubroblog1.vercel.app/api/posts');  // Vercel API endpoint
+  if (!response.ok) {
+    console.error('Failed to fetch posts:', response.statusText);
+    return;
+  }
   const posts = await response.json();
   
   let postsList = document.getElementById("postsList");
@@ -42,7 +47,7 @@ document.getElementById("postForm").addEventListener("submit", async (e) => {
   formData.append("content", content);
   if (image) formData.append("image", image);
 
-  const url = id ? `/api/posts/${id}` : '/api/posts';
+  const url = id ? `https://eksubroblog1.vercel.app/api/posts/${id}` : 'https://eksubroblog1.vercel.app/api/posts';  // Update to Vercel URL
   const method = id ? "PUT" : "POST";
 
   await fetch(url, { method, body: formData });
@@ -55,23 +60,7 @@ document.getElementById("postForm").addEventListener("submit", async (e) => {
 // Delete a post
 async function deletePost(id) {
   if (confirm("Are you sure you want to delete this post?")) {
-      await fetch(`/api/posts/${id}`, { method: "DELETE" });
+      await fetch(`https://eksubroblog1.vercel.app/api/posts/${id}`, { method: "DELETE" });  // Vercel URL
       loadPosts();
-  }
 }
-fetch('/api/posts')
-  .then(response => {
-    if (!response.ok) {
-      // If the response is not ok (404, 500, etc.), throw an error
-      throw new Error('Network response was not ok: ' + response.statusText);
-    }
-    return response.json();  // Parse the JSON only if the response is OK
-  })
-  .then(data => {
-    // Handle the parsed JSON data here
-    console.log(data);  // Display the posts data (or whatever your endpoint returns)
-  })
-  .catch(error => {
-    // Log any errors that occur
-    console.error('There was a problem with the fetch operation:', error);
-  });
+}
