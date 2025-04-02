@@ -59,3 +59,19 @@ async function deletePost(id) {
       loadPosts();
   }
 }
+fetch('/api/posts')
+  .then(response => {
+    if (!response.ok) {
+      // If the response is not ok (404, 500, etc.), throw an error
+      throw new Error('Network response was not ok: ' + response.statusText);
+    }
+    return response.json();  // Parse the JSON only if the response is OK
+  })
+  .then(data => {
+    // Handle the parsed JSON data here
+    console.log(data);  // Display the posts data (or whatever your endpoint returns)
+  })
+  .catch(error => {
+    // Log any errors that occur
+    console.error('There was a problem with the fetch operation:', error);
+  });
