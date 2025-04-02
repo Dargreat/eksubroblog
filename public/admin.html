@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exkubro Blog - Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+   
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Manage Blog Posts</h1>
+        </header>
+
+        <!-- Create New Post -->
+        <section class="form-container">
+            <h2>Create/Edit Post</h2>
+            <form id="postForm">
+                <input type="hidden" id="postId">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label>Author</label>
+                    <input type="text" id="author" required>
+                </div>
+                <div class="form-group">
+                    <label>Content</label>
+                    <textarea id="content" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Header Image (Optional)</label>
+                    <input type="file" id="image">
+                </div>
+                <button type="submit" class="btn">Publish Post</button>
+            </form>
+        </section>
+
+        <!-- List of Blog Posts -->
+        <section id="managePosts" class="posts-container">
+            <h2>All Posts</h2>
+            <div id="postsList"></div>
+        </section>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

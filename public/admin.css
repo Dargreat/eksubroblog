@@ -1,0 +1,142 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Layout */
+body {
+  display: flex;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #222;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: #555;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 260px;
+  padding: 20px;
+  flex: 1;
+}
+
+header {
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.form-container, .posts-container {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #007bff;
+}
+
+.btn {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* Posts List */
+.post {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border-left: 5px solid #007bff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.post .actions {
+  margin-top: 10px;
+}
+
+.post .actions button {
+  margin-right: 10px;
+  padding: 7px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.post .actions .edit-btn {
+  background: #28a745;
+  color: white;
+}
+
+.post .actions .delete-btn {
+  background: #dc3545;
+  color: white;
+}

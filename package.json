@@ -1,0 +1,23 @@
+{
+  "name": "eksubroblog",
+  "version": "1.0.0",
+  "description": "A blog application with Cloudinary image upload",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "cloudinary": "^2.6.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.21.2",
+    "mongoose": "^8.13.1",
+    "multer": "^1.4.3",
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "author": "",
+  "license": "ISC"
+}

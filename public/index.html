@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eksu Bro Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <div class="logo-main">
+        <span>EKSU</span><span>BRO</span>
+      </div>
+      <span class="logo-sub">BLOG</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Where Ideas Ignite & Stories Unfold</h1>
+      <p class="hero-text">
+        Dive into a world of thought-provoking articles, creative explorations, and mind-expanding perspectives.
+      </p>
+      <button class="cta-button" onclick="location.href='browse.html'">Explore Articles</button>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-content">
+      <h2 class="about-title">Our Story</h2>
+      <p class="about-text">
+        Eksu Bro Blog is a platform dedicated to authentic storytelling and intellectual exploration. Our curated content sparks meaningful conversations.
+      </p>
+      <button class="cta-button" onclick="location.href='about.html'">Meet the Team</button>
+    </div>
+    <div class="about-image">
+      <!-- Replace with a dynamic image or remove if using a background image -->
+      <i class="fas fa-pen-nib" style="font-size: 3rem; opacity: 0.8;"></i>
+    </div>
+  </section>
+
+  <section class="latest-news">
+    <h2 class="section-title">Latest Articles</h2>
+    <div class="news-grid" id="newsGrid">
+      <!-- Posts will be dynamically populated via main.js -->
+    </div>
+    <div class="view-all-container">
+      <a href="post.html" class="view-all-button">View All Articles <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <section class="comments-section">
+    <div class="comments-container">
+      <form class="comment-form" id="commentForm">
+        <h3 class="form-title">Leave a Comment</h3>
+        <div class="form-group">
+          <input type="text" name="name" class="form-input" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" class="form-input" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <textarea name="comment" class="form-input" placeholder="Write your comment..." rows="5" required></textarea>
+        </div>
+        <button type="submit" class="form-button">Post Comment</button>
+      </form>
+
+      <div class="comment-list" id="commentList">
+        <!-- Existing comments will be dynamically loaded -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <span>EKSU</span><span>BRO</span>
+        </div>
+        <p class="footer-text">Join our community of thinkers and explorers. Stay curious, stay inspired.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="#home">Home</a></li>
+          <li class="footer-link"><a href="#articles">Articles</a></li>
+          <li class="footer-link"><a href="#about">About</a></li>
+          <li class="footer-link"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      © 2024 Eksu Bro Blog. All rights reserved.
+    </div>
+  </footer>
+  <script src="main.js" type="module"></script>
+</body>
+</html>
