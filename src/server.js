@@ -1,15 +1,19 @@
 require('dotenv').config();
-const app = require('./app');
 const connectDB = require('./config/db');
+const app = require('./app');
 
-// Connect to the database and start the server
-connectDB().then(() => {
-    app.listen(process.env.PORT, () => {
-        console.log(`Server running on port ${process.env.PORT}`);
-    });
-});
-// Global error handler
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send({ message: 'Something went wrong!' });
-});
+// Connect to database and start the server
+const startServer = async () => {
+    try {
+        await connectDB(); // Connect to MongoDB
+        const PORT = process.env.PORT || 5000;
+        app.listen(PORT, () => {
+            console.log(`✅ Server running on port ${PORT}`);
+        });
+    } catch (error) {
+        console.error('❌ Error starting server:', error);
+        process.exit(1); // Exit process with failure
+    }
+};
+
+startServer();
