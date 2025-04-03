@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/posts.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "api/comments.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/posts",
+        "dest": "/api/posts.js"
+      },
+      {
+        "src": "/api/comments",
+        "dest": "/api/comments.js"
+      }
+    ]
+  }
+  
