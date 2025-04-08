@@ -94,3 +94,10 @@
     padding: 2rem;
     grid-column: 1 / -1;
 }
+
+#postsGrid * {
+    border: 2px solid red !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }

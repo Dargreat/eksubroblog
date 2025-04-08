@@ -1,22 +1,23 @@
-const Post = require('../models/Post');
+const Post = require('../models/postModel');
 
 // Create a new post
 const createPost = async (req, res) => {
-    try {
-        const { title, author, content, imageUrl } = req.body;
-
+    try {        
+        const { title, content, author } = req.body;
+        const imageUrl = req.file ? req.file.path : null; // Cloudinary URL
+  
         const newPost = new Post({
-            title,
-            author,
-            content,
-            imageUrl
+          title,
+          content,
+          author,
+          imageUrl,
         });
-
-        const savedPost = await newPost.save();
-        res.status(201).json(savedPost);
-    } catch (error) {
-        res.status(500).json({ message: 'Error creating post', error });
-    }
+  
+        await newPost.save();
+        res.status(201).json(newPost);
+      } catch (error) {
+        res.status(500).json({ message: 'Server error', error });
+      }
 };
 
 // Get all posts (with comments populated)
@@ -45,10 +46,11 @@ const getSinglePost = async (req, res) => {
 // Update a post by ID
 const updatePost = async (req, res) => {
     try {
-        const { title, author, content, imageUrl } = req.body;
+        const { title, author, content, id } = req.body;
+        const imageUrl = req.file ? req.file.path : null; // Cloudinary URL
 
         const updatedPost = await Post.findByIdAndUpdate(
-            req.params.postId,
+            id,
             { title, author, content, imageUrl },
             { new: true }
         );

@@ -1,6 +1,6 @@
 // api/comments.js
 const express = require('express');
-const Comment = require('../models/Comment'); // Assuming Comment model is in the models folder
+const Comment = require('../models/commentModel'); // Assuming Comment model is in the models folder
 const router = express.Router();
 
 // Create a new comment
