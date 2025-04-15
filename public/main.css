@@ -618,12 +618,14 @@ body {
     margin: 0;
     font-size: 0.95rem;
     color: black;
+    margin-bottom: 20px;
 }
 
 /* LA Comments Section */
 .la-comments-header {
     position: relative;
     margin: 2rem 0;
+    margin-top: 20px;
 }
 
 .la-comments-header::after {
