@@ -19,18 +19,17 @@ function renderPosts(posts) {
         return;
     }
 
+    console.log(posts)
     grid.innerHTML = posts.map(post => {
-        const imageUrl = post.imageUrl && post.imageUrl.trim() !== '' ? post.imageUrl : fallbackImage;
-
         return `
             <article class="news-card">
-                <img src="${imageUrl}" 
+                <img src="${post.imageUrl}" 
                      alt="${post.title || 'No title'}" 
                      class="news-image"
                      onerror="this.onerror=null; this.src='${fallbackImage}'">
                 <div class="news-content">
                     <span class="news-date">
-                        ${post.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'No date'}
+                        ${post.timestamp ? new Date(post.timestamp).toLocaleDateString() : 'No date'}
                     </span>
                     <h3 class="news-title">${post.title || 'Untitled'}</h3>
                     <p class="news-excerpt">
