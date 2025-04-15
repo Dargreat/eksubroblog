@@ -16,7 +16,7 @@ const upload = require('../config/cloudinary');
 const { createComment, getComments } = require('../controllers/commentController');
 
 // Create a new post (with validation)
-router.post('/', upload.any(), validatePost, createPost);
+router.post('/', upload.single('image'), validatePost, createPost);
 
 // Get all posts (including comments)
 router.get('/', getPosts);

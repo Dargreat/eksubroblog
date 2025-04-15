@@ -4,7 +4,9 @@ const Post = require('../models/postModel');
 const createPost = async (req, res) => {
     try {        
         const { title, content, author } = req.body;
+        console.log(req.file)
         const imageUrl = req.file ? req.file.path : null; // Cloudinary URL
+        console.log(req.file ? req.file.path : null)
   
         const newPost = new Post({
           title,

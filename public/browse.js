@@ -19,7 +19,6 @@ function renderPosts(posts) {
         return;
     }
 
-    console.log(posts)
     grid.innerHTML = posts.map(post => {
         return `
             <article class="news-card">

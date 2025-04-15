@@ -5,7 +5,7 @@ const postSchema = new mongoose.Schema({
     title: { type: String, required: true },
     author: { type: String, required: true },
     content: { type: String, required: true },
-    imageUrl: { type: String },  // Optional image URL for the post
+    imageUrl: { type: String },
     timestamp: { type: Date, default: Date.now },  // Automatically set to current date/time
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
