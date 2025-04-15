@@ -1,19 +1,4 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        const response = await fetch('/api/posts');
-        
-        const posts = await response.json();
-        renderPosts(posts);
-    } catch (error) {
-        document.getElementById('postsGrid').innerHTML = `
-            <p class="error-message">Failed to load posts. Please refresh.</p>
-        `;
-    }
-});
-
 function renderPosts(posts) {
-    console.log(posts);
-    
     const grid = document.getElementById('postsGrid');
     
     if (!posts || posts.length === 0) {
@@ -21,15 +6,22 @@ function renderPosts(posts) {
         return;
     }
 
-    console.log(posts);
-    
+    grid.innerHTML = posts.map(post => {
+        // Check if the post has a valid image
+        const imageUrl = post.image || post.imageUrl; // Try both common image property names
+        const isValidImage = imageUrl && 
+                           (imageUrl.startsWith('http') || imageUrl.startsWith('/')) &&
+                           !imageUrl.includes('default-image');
 
-    grid.innerHTML = posts.map(post => `
+        // Use priority: 1. Post image 2. Default image
+        const finalImageUrl = isValidImage ? imageUrl : 'https://adegbitejoshua.vercel.app/image.png';
+
+        return `
         <article class="news-card">
-            <img src="${post.imageUrl || 'https://adegbitejoshua.vercel.app/image.png'}" 
+            <img src="${finalImageUrl}" 
                  alt="${post.title || 'No title'}" 
                  class="news-image"
-                 onerror="this.src='https://adegbitejoshua.vercel.app/image.png'">
+                 onerror="handleImageError(this)">
             <div class="news-content">
                 <span class="news-date">
                     ${post.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'No date'}
@@ -41,5 +33,13 @@ function renderPosts(posts) {
                 <a href="post.html?id=${post._id || '#'}" class="read-more">Read More →</a>
             </div>
         </article>
-    `).join('');
+        `;
+    }).join('');
+}
+
+// Add this error handler function
+function handleImageError(img) {
+    console.error('Failed to load image:', img.src);
+    img.src = 'https://adegbitejoshua.vercel.app/image.png';
+    img.onerror = null; // Prevent infinite loop if default image fails
 }
