@@ -538,3 +538,151 @@
     grid-column: 1 / -1;
     padding: 2rem;
 }
+/* Legit Articles Section - Unique Styling */
+#la-section {
+  background-color: white;
+  padding: 60px 20px;
+}
+
+.la-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+#la-header,
+#la-comments-header {
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+  color: black;
+}
+
+#la-header::after,
+#la-comments-header::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: orange;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: la-underline-grow 1s ease-out forwards;
+}
+
+@keyframes la-underline-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.la-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.la-testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.la-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-left: 5px solid orange;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.la-card h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.la-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: black;
+}/* Legit Articles Section - Unique Styling */
+#la-section {
+  background-color: white;
+  padding: 60px 20px;
+}
+
+.la-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+#la-header,
+#la-comments-header {
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+  color: black;
+}
+
+#la-header::after,
+#la-comments-header::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: orange;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: la-underline-grow 1s ease-out forwards;
+}
+
+@keyframes la-underline-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.la-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.la-testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.la-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-left: 5px solid orange;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.la-card h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.la-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: black;
+}
+
