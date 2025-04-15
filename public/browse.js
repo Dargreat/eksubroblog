@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function renderPosts(posts) {
     const grid = document.getElementById('postsGrid');
-    const fallbackImage = 'https://adegbitejoshua.vercel.app/image.png';
+    const fallbackImage = 'https://i.imgur.com/wGjsQCU.png';
 
     if (!posts || posts.length === 0) {
         grid.innerHTML = '<p class="no-posts">No articles found</p>';
